@@ -21,7 +21,7 @@ class NonRegression {
         val receivedFile = testResources.resolve("dependencies-with-bom-received.txt")
 
         val currentMapping = getArtifactNameToConstantMapping()
-            .filterNot { it.value  != null && it.value.endsWith(":_") }
+            .filterNot { it.value?.endsWith(":_") == true }
             .map { it.constantName }
             .sorted()
         receivedFile.writeText(currentMapping.joinToString(separator = "\n", postfix = "\n"))
