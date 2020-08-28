@@ -26,7 +26,8 @@ import kotlin.reflect.typeOf
 internal data class DependencyMapping(
     val group: String,
     val artifact: String,
-    val constantName: String
+    val constantName: String,
+    val value: String? = null
 ) {
     companion object {
         fun fromLine(line: String): DependencyMapping? {
@@ -148,7 +149,8 @@ private fun getArtifactNameToConstantMappingFromObject(
         DependencyMapping(
             group = group,
             artifact = name,
-            constantName = constantName
+            constantName = constantName,
+            value = dependencyNotation
         )
     }
 
