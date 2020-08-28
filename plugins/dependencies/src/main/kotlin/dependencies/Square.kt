@@ -93,7 +93,7 @@ object Square {
 
         val drivers = Drivers
 
-        const val coroutinesExtensions = "$group:coroutines-extensions"
+        const val coroutinesExtensions = "$group:coroutines-extensions:_"
 
         object Drivers {
             const val android = "$group:android-driver:_"
